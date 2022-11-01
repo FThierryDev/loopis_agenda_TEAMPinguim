@@ -1,1 +1,1 @@
-# loopis_agenda_TEAMPinguim
+# Projeto: Loopis Agenda - Team Pinguim
