@@ -1,0 +1,19 @@
+{
+  "name": "loopis_agenda_teampinguim",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FThierryDev/loopis_agenda_TEAMPinguim.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FThierryDev/loopis_agenda_TEAMPinguim/issues"
+  },
+  "homepage": "https://github.com/FThierryDev/loopis_agenda_TEAMPinguim#readme"
+}
