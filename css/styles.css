@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --yellow: #FEDA70;
+    --bg: #373030;
+    --yellowShadow: rgba(255, 255, 0, 0.2);
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+textarea,
+select,
+button {
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: 'Rufina', serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+img {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+@media (max-width: 1080px) {
+    html {
+        font-size: 93.75%;
+    }
+}
+
+@media (max-width: 1080px) {
+    html {
+        font-size: 93.75%;
+    }
+}

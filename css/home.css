@@ -1,0 +1,41 @@
+div#content, div#content main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div#content {
+    height: 100vh;
+    background-color: var(--bg);
+    overflow: hidden;
+}
+
+div#content main {
+    width: 15%;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+
+div#content main h1{
+    font-size: 4em;
+}
+
+div#content main p {
+    margin-top: 10%;
+    font-size: 1.5em;
+}
+
+div#content main button {
+    border: none;
+    border-radius: 40px;
+    background-color: var(--yellow);
+    padding: 26px 88px;
+    font-size: 24px;
+    margin-top: 80pt;
+    box-shadow: 0 1px 2px 2px var(--yellowShadow);
+}
+
+div#content #logo {
+    margin-left: 25vh;
+}
