@@ -1,0 +1,201 @@
+body {
+    background-color: #373030;
+}
+
+#container {
+    background-color: #C4C4C4;
+    position: absolute;
+    width: 1000px;
+    height: 600px;
+    left: 340px;
+    top: 30px;
+    bottom: 30px
+}
+
+#title {
+    position: absolute;
+    width: 500px;
+    height: 120px;
+    left: 590px;
+    top: 50px;
+    background: #AFAFAF;
+    border-radius: 10px;
+    
+}
+
+h2 {
+    font-size: 35px;
+    line-height: 60px;
+    justify-content: center;
+    display: flex;
+    letter-spacing: 0.03em;
+    color: #000000;
+}
+
+#button {
+    position: absolute;
+    width: 340px;
+    height: 40px;
+    left: 670px;
+    top: 550px;
+    background: #FEDA70;
+    border-radius: 43px;
+    border: none;
+}
+
+div {
+    position: absolute;
+    width: 900px;
+    height: 70px;
+    left: 400px;
+    top: 200px;
+    background: #AFAFAF;
+    border-radius: 43px;
+}
+
+#tipoTarefa {
+    position: absolute;
+    width: 170.18px;
+    height: 24px;
+    left: 30px;
+    top: 24px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.03em;
+    color: #000000;
+}
+
+#tarefa {
+    position: absolute;
+    width: 600px;
+    height: 60px;
+    left: 200px;
+    top: 5px;
+    background: #C4C4C4;
+    border-radius: 75px;
+}
+
+#descricao {
+    position: absolute;
+    width: 488.53px;
+    height: 56px;
+    left: 50px;
+    top: 1px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    display: flex;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #000000;
+}
+
+h2#tarefa > img {
+    position: absolute;
+    width: 25px;
+    height: 28px;
+}
+
+#lapis {
+    left: 612px;
+    right: 10%;
+    top: 16px;
+}
+
+#lixeiro {
+    left: 652px;
+    right: 10%;
+    top: 16px;
+}
+
+#lateral {
+    position: absolute;
+    width: 267px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background: #212048;
+}
+
+#buton {
+    position: absolute;
+    left: 110px;
+    top: 590px;
+    bottom: 80px;
+    width: 40px;
+    height: 40px;
+    background: #212048;
+    border: none;
+}
+
+#eventos {
+    position: absolute;
+    left: 60px;
+    top: 30px;
+    background: #E7E7E7;
+    border-radius: 30px;
+    height: 130px;
+    width: 150px;
+    border-radius: 30px;
+}
+
+#diaMes {
+    position: absolute;
+    left: 23%;
+    right: 17.24%;
+    top: 05%;
+    bottom: 34.34%;
+    font-family: 'Saira';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 57px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+#ano{
+    position: absolute;
+    left: 37%;
+    right: 26.44%;
+    top: 47%;
+    bottom: 34.34%;
+    font-family: 'Saira';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 31px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+#diaHoje {
+    position: absolute;
+    left: 103px;
+    top: 130px;
+    background: #C4C4C4;
+    border-radius: 75px;
+    height: 20px;
+    width: 65px;
+}
+
+#hoje { 
+    position: absolute;
+    left: 15px;
+    font-family: 'Rufina';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
