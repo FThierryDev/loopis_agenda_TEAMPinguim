@@ -1,26 +1,34 @@
 body {
     background-color: #373030;
+
 }
 
 #container {
     background-color: #C4C4C4;
     position: absolute;
-    width: 1000px;
-    height: 600px;
-    left: 340px;
+    width: 75vw;
+    height: 95%;
+    left: 24%;
     top: 30px;
     bottom: 30px
+    
 }
 
-#title {
-    position: absolute;
+#title-box {
+    position: relative;
     width: 500px;
     height: 120px;
-    left: 590px;
-    top: 50px;
+    margin-left: 25%;
+    margin-top: 2%;
     background: #AFAFAF;
     border-radius: 10px;
     
+}
+
+#title-text{
+    position: relative;
+    top: 25%;
+    left: 30%;
 }
 
 h2 {
@@ -32,26 +40,41 @@ h2 {
     color: #000000;
 }
 
-#button {
-    position: absolute;
+.box-tarefas{
+    position: relative;
+    height: 60vh;
+    overflow-y: auto;
+    
+}
+
+.box-dates{
+    position: relative;
+    overflow-y: auto;
+    height: 93vh;
+}
+
+#add-activity-button {
+    position: relative;
     width: 340px;
     height: 40px;
-    left: 670px;
-    top: 550px;
+    margin-left: 35%;
+    margin-top: 1%;
     background: #FEDA70;
     border-radius: 43px;
     border: none;
 }
 
-div {
-    position: absolute;
-    width: 900px;
-    height: 70px;
-    left: 400px;
-    top: 200px;
+.blocoTarefas {
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-bottom: 10px;
+    position: relative;
     background: #AFAFAF;
     border-radius: 43px;
 }
+
+
 
 #tipoTarefa {
     position: absolute;
@@ -69,7 +92,7 @@ div {
 }
 
 #tarefa {
-    position: absolute;
+    position: relative;
     width: 600px;
     height: 60px;
     left: 200px;
@@ -84,6 +107,7 @@ div {
     height: 56px;
     left: 50px;
     top: 1px;
+    margin-bottom: 10px;
     font-weight: 400;
     font-size: 15px;
     line-height: 20px;
@@ -117,24 +141,24 @@ h2#tarefa > img {
     height: 100%;
     left: 0px;
     top: 0px;
+    bottom: 0px;
     background: #212048;
 }
 
-#buton {
+#add-date-button {
     position: absolute;
-    left: 110px;
-    top: 590px;
-    bottom: 80px;
+    margin-left:40%;
+    bottom: 0px;
     width: 40px;
     height: 40px;
     background: #212048;
     border: none;
 }
 
-#eventos {
-    position: absolute;
-    left: 60px;
-    top: 30px;
+.eventos {
+    position: relative;
+    margin-left: 50px;
+    margin-top: 20px;
     background: #E7E7E7;
     border-radius: 30px;
     height: 130px;
@@ -178,8 +202,8 @@ h2#tarefa > img {
 
 #diaHoje {
     position: absolute;
-    left: 103px;
-    top: 130px;
+    margin-top: 60%;
+    margin-left: 28%;
     background: #C4C4C4;
     border-radius: 75px;
     height: 20px;
@@ -198,4 +222,14 @@ h2#tarefa > img {
     align-items: center;
     text-align: center;
     color: #000000;
+}
+
+::-webkit-scrollbar{
+    background-color: #AFAFAF;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background: #414141;
+   border-radius: 5px;
+
 }
