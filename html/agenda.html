@@ -10,32 +10,67 @@
   </head>
   <body>
     <main>
-    <h1 id="container">
-      <h2 id="title">Atividades do dia: <br>&nbsp;&nbsp;&nbsp;&nbsp; 00/00/0000</h2>
-      <button id="button">Insira uma nova atividade aqui</button>
-      <div id="blocoTarefas">
-        <h1 id="tipoTarefa">fazer pamonha: </h1>
-        <h2 id="tarefa">
-          <p id="descricao">tutorial rapido e facil de como fazer pamonha, pega o milho, bota no liquidificador com leite, ponha numa vasilha com queijo e manteiga da terra...</p>
-            <img id="lapis" src="../assets/pen-icon.svg" alt="Lapis de editar">
-            <img id="lixeiro" src="../assets/trash-icon.svg" alt="excluir">
-        </h2>
+
+    <section id="container">
+
+      <div id="title-box"><h1 id="title-text">Atividades do dia: <br>&nbsp;&nbsp;&nbsp;&nbsp; 00/00/0000</h1></div>
+      
+      <div class="box-tarefas">
+
+        <div class="blocoTarefas">
+          <h1 id="tipoTarefa">fazer pamonha: </h1>
+          <h2 id="tarefa">
+            <p id="descricao">tutorial rapido e facil de como fazer pamonha, pega o milho, bota no liquidificador com leite, ponha numa vasilha com queijo e manteiga da terra...</p>
+              <img id="lapis" src="../assets/pen-icon.svg" alt="Lapis de editar">
+              <img id="lixeiro" src="../assets/trash-icon.svg" alt="excluir">
+          </h2>
+        </div>
+        <div class="blocoTarefas">
+          <h1 id="tipoTarefa">fazer pamonha: </h1>
+          <h2 id="tarefa">
+            <p id="descricao">tutorial rapido e facil de como fazer pamonha, pega o milho, bota no liquidificador com leite, ponha numa vasilha com queijo e manteiga da terra...</p>
+              <img id="lapis" src="../assets/pen-icon.svg" alt="Lapis de editar">
+              <img id="lixeiro" src="../assets/trash-icon.svg" alt="excluir">
+          </h2>
+        </div>
+        
+       
+
       </div>
-    </h1>
+        
+    <button id="add-activity-button">Insira uma nova atividade aqui</button>
+    </section>
+
     </main>
-    <aside>
-      <section id="lateral">
-        <h1 id="eventos">
+
+
+    <section id="lateral">
+      <div class="box-dates">
+
+        <div class="eventos">
           <p id="diaMes">00/00</p>
           <p id="ano">2022</p>
           <h2 id="diaHoje">
             <p id="hoje">Hoje</p>
           </h2>
-        </h1>
-        <button id="buton"> <img src="../assets/plus-icon.svg" alt="botao">
-        </button>
-      </section>
-    </aside>
+        </div>
+        <div class="eventos">
+          <p id="diaMes">00/00</p>
+          <p id="ano">2022</p>
+          <h2 id="diaHoje">
+            <p id="hoje">Hoje</p>
+          </h2>
+        </div>
+
+
+
+      </div>
+
+
+      <button id="add-date-button"> <img src="../assets/plus-icon.svg" alt="botao"></button>
+    </section>
+ 
+
     <script src="../js/script.js"></script>
   </body>
 </html>
