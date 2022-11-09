@@ -1,10 +1,9 @@
 body {
-    background-color: #373030;
-
+    background-color: var(--bg-schedule);
 }
 
 #container {
-    background-color: #C4C4C4;
+    background-color: var(--light-gray);
     position: absolute;
     width: 75vw;
     height: 95%;
@@ -20,7 +19,7 @@ body {
     height: 120px;
     margin-left: 25%;
     margin-top: 2%;
-    background: #AFAFAF;
+    background: var(--gray);
     border-radius: 10px;
     
 }
@@ -37,7 +36,7 @@ h2 {
     justify-content: center;
     display: flex;
     letter-spacing: 0.03em;
-    color: #000000;
+    color: var(--black);
 }
 
 .box-tarefas{
@@ -59,7 +58,7 @@ h2 {
     height: 40px;
     margin-left: 35%;
     margin-top: 1%;
-    background: #FEDA70;
+    background: var(--yellow);
     border-radius: 43px;
     border: none;
 }
@@ -70,7 +69,7 @@ h2 {
     margin-right: 5%;
     padding-bottom: 10px;
     position: relative;
-    background: #AFAFAF;
+    background: var(--gray);
     border-radius: 43px;
 }
 
@@ -88,7 +87,7 @@ h2 {
     display: flex;
     align-items: center;
     letter-spacing: 0.03em;
-    color: #000000;
+    color: var(--black);
 }
 
 #tarefa {
@@ -97,7 +96,7 @@ h2 {
     height: 60px;
     left: 200px;
     top: 5px;
-    background: #C4C4C4;
+    background: var(--light-gray);
     border-radius: 75px;
 }
 
@@ -114,7 +113,7 @@ h2 {
     display: flex;
     text-align: center;
     letter-spacing: 0.03em;
-    color: #000000;
+    color: var(--black);
 }
 
 h2#tarefa > img {
@@ -142,7 +141,7 @@ h2#tarefa > img {
     left: 0px;
     top: 0px;
     bottom: 0px;
-    background: #212048;
+    background: var(--purple);
 }
 
 #add-date-button {
@@ -151,7 +150,7 @@ h2#tarefa > img {
     bottom: 0px;
     width: 40px;
     height: 40px;
-    background: #212048;
+    background: var(--purple);
     border: none;
 }
 
@@ -159,7 +158,7 @@ h2#tarefa > img {
     position: relative;
     margin-left: 50px;
     margin-top: 20px;
-    background: #E7E7E7;
+    background: var(--white);
     border-radius: 30px;
     height: 130px;
     width: 150px;
@@ -180,7 +179,7 @@ h2#tarefa > img {
     display: flex;
     align-items: center;
     text-align: center;
-    color: #000000;
+    color: var(--black);
 }
 
 #ano{
@@ -197,14 +196,14 @@ h2#tarefa > img {
     display: flex;
     align-items: center;
     text-align: center;
-    color: #000000;
+    color: var(--black);
 }
 
 #diaHoje {
     position: absolute;
     margin-top: 60%;
     margin-left: 28%;
-    background: #C4C4C4;
+    background: var(--light-gray);
     border-radius: 75px;
     height: 20px;
     width: 65px;
@@ -221,15 +220,181 @@ h2#tarefa > img {
     display: flex;
     align-items: center;
     text-align: center;
-    color: #000000;
+    color: var(--black);
 }
 
 ::-webkit-scrollbar{
-    background-color: #AFAFAF;
+    background-color: var(--gray);
     border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb{
-    background: #414141;
-   border-radius: 5px;
+    background: var(--dark-gray);
+    border-radius: 5px;
 
+}
+
+/* ******************************************************************** */
+
+div#modal {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: var(--light-gray);
+    padding: 20px 0px;
+    width: 60%;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    width: 90%;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+input[type = "date"]#date {
+    width: 120pt;
+    text-align: center;
+    border-radius: 20px;
+    border: none;
+    padding: 4pt;
+    background-color: var(--gray);
+    font-size: 16pt;
+}
+
+input[type="date"]#date::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+div#textAreaBox {
+    width: 100%;
+    background-color: var(--gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15pt;
+}
+
+input#desc {
+    background-color: var(--light-gray);
+    border: none;
+    border-radius: 15px;
+    resize: none;
+    width: 95%;
+    margin: 6pt 0pt;
+    margin: 10px;
+    padding: 10px 0px;
+    text-indent: 10pt;
+}
+
+input[type = "text"]{
+    border: none;
+    background-color: var(--gray);
+    border-radius: 20px;
+    padding: 5px 0px;
+    text-indent: 20pt;
+}
+
+h1#addItemTitle {
+    border: none;
+    padding: 10px 10%;
+    text-align: center;
+    font-size: 48px;
+    background-color: var(--gray);
+    border-radius: 20px;
+    margin-bottom: 10pt;
+}
+
+h2#alterItemTitle {
+    border: none;
+    font-size: 24px;
+}
+
+input.confirmButton {
+    border: none;
+    font-size: 36px;
+    padding: 5px;
+    width: 40vh;
+    border-radius: 40px;
+    background-color: var(--green);
+    margin-top: 20pt;
+}
+
+input.cancelButton {
+    border: none;
+    font-size: 36px;
+    padding: 5px;
+    width: 40vh;
+    border-radius: 40px;
+    background-color: var(--gray);
+    margin-top: 20pt;
+}
+
+div.options {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-around;
+}
+
+div#updateItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 550pt;
+    padding: 50px 0px;
+    background-color: var(--light-gray);
+}
+
+button#remove, button#cancel {
+    width: 45%;
+    border: none;
+    border-radius: 20px;
+    padding: 5pt 10pt;
+    font-size: 36px;
+}
+
+p#removeText {
+    font-size: 36px;
+    margin-bottom: 60pt;
+}
+
+p#alterText {
+    font-size: 36px;
+    margin-bottom: 20pt;
+}
+
+button#cancel {
+    background-color: var(--gray);
+}
+
+button#remove {
+    background-color: var(--red);
+}
+
+input#scheduleDate {
+    margin-bottom: 5pt;
+    text-align: start;
+    text-indent: 3pt;
+    width: 180pt;
+    font-size: 30px;
 }

@@ -7,7 +7,15 @@
 :root {
     --yellow: #FEDA70;
     --bg: #373030;
-    --yellowShadow: rgba(255, 255, 0, 0.2);
+    --purple: #212048;
+    --black: #000000;
+    --gray: #afafaf;
+    --light-gray: #c4c4c4;
+    --red: #E8665C;
+    --green: #52CC7C;
+    --dark-gray: #414141;
+    --bg-schedule: #373030;
+    --white: #e7e7e7;
 }
 
 body {
