@@ -1,40 +1,13 @@
-const addButton = document.querySelector('#addButton');
 
+//localStorage.setItem('peoples', JSON.stringify(peoples)); // salva o array em localstorage, é preciso salva-lo em JSON, por isso a conversão..
 
-const peoples = [
-    {
-        name: 'Luis',
-        lastName: 'felipe',
-        year: 19,
-        email: 'luis.felippe@academico.ifpb.edu.br',
-        city: 'sjp'
-    },
-    {
-        name: 'kaue',
-        lastName: 'ronald',
-        year: 20,
-        email: 'kaue.ronald@academico.ifpb.edu.br',
-        city: 'sjp'
-    },{
-        name: 'matheus',
-        lastName: 'nunes',
-        year: 20,
-        email: 'matheus.nunes@academico.ifpb.edu.br',
-        city: 'sjp'
-    } 
-]
+//let arrayPeoples = localStorage.getItem('peoples'); // recupero o array peoples do localstorage, ele vem em JSON e não objeto!
 
-let name = 'luis'
+//console.log(JSON.parse(arrayPeoples)[1].name); // exibo o array, sendo q preciso converte-lo antes em objeto novamente, aqui exibo o primeiro objeto do array sendo sua propriedade nome.
 
-localStorage.setItem('peoples', JSON.stringify(peoples)); // salva o array em localstorage, é preciso salva-lo em JSON, por isso a conversão..
+//localStorage.removeItem('item') //remove o item do localstorage
 
-let arrayPeoples = localStorage.getItem('peoples'); // recupero o array peoples do localstorage, ele vem em JSON e não objeto!
-
-console.log(JSON.parse(arrayPeoples)[1].name); // exibo o array, sendo q preciso converte-lo antes em objeto novamente, aqui exibo o primeiro objeto do array sendo sua propriedade nome.
-
-localStorage.removeItem('item') //remove o item do localstorage
-
-localStorage.clear();
+//localStorage.clear();
 
 ///////////////////////////////////////////////////////////////// INICIO ////////////////////
 
