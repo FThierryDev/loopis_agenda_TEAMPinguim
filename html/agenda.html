@@ -69,7 +69,72 @@
 
       <button id="add-date-button"> <img src="../assets/plus-icon.svg" alt="botao"></button>
     </section>
- 
+
+
+    <div id="modal" style="display: none;" >
+      <form style="display: none;" >
+        <h1 id="addItemTitle">
+          Nova Atividade
+        </h1>
+        <fieldset>
+          <label for="name">Nome: </label>
+          <input type="text" name="name" id="name">
+        </fieldset>
+        <fieldset>
+          <label for="desc">Descrição: </label>
+          <div id="textAreaBox" ><input type="text" name="desc" id="desc"></div>
+        </fieldset>
+        <fieldset>
+          <label for="date">Data:</label>
+          <input type="date" name="date" id="date">
+        </fieldset>
+        <input type="submit" value="Adicionar" class="confirmButton">
+      </form>
+
+      <form style="display: none;" >
+        <h2 id="alterItemTitle" >
+          Atividade: Fazer o almoço
+        </h2>
+        <fieldset>
+          <label for="name">Nome: </label>
+          <input type="text" name="name" id="name">
+        </fieldset>
+        <fieldset>
+          <label for="desc">Descrição: </label>
+          <div id="textAreaBox" ><input type="text" name="desc" id="desc"></div>
+        </fieldset>
+        <fieldset>
+          <label for="date">Data:</label>
+          <input type="date" name="date" id="date">
+        </fieldset>
+        <div class="options" >
+          <input type="submit" value="Cancelar" class="cancelButton">
+          <input type="submit" value="Adicionar" class="confirmButton">
+        </div>
+      </form>
+
+      <div id="updateItem" style="display: none;">
+        <p id="removeText" >Deseja excluir a seguinte atividade:<br> <strong>Fazer o almoço</strong> </p>
+        <div class="options" >
+          <button id="cancel">
+            Cancelar
+          </button>
+          <button id="remove" >
+            Excluir
+          </button>
+        </div>
+      </div>
+
+      <div id="updateItem" style="display: none;">
+        <p id="alterText" >Escolha uma data a seguir: </p>
+        <input type="date" id="scheduleDate" >
+        <div class="options" >
+          <input type="submit" value="Cancelar" class="cancelButton">
+          <input type="submit" value="Confirmar" class="confirmButton">
+        </div>
+      </div>
+
+    </div>
 
     <script src="../js/script.js"></script>
   </body>
