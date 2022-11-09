@@ -39,6 +39,10 @@ h2 {
     color: var(--black);
 }
 
+#dateActivity{
+    margin-left: 36%;
+}
+
 .box-tarefas{
     position: relative;
     height: 60vh;
@@ -200,8 +204,8 @@ h2#tarefa > img {
 }
 
 #diaHoje {
-    position: absolute;
-    margin-top: 60%;
+    position: relative;
+    margin-top: 55%;
     margin-left: 28%;
     background: var(--light-gray);
     border-radius: 75px;
@@ -221,6 +225,11 @@ h2#tarefa > img {
     align-items: center;
     text-align: center;
     color: var(--black);
+}
+
+#alertNoActivities{
+    margin-left: 7%;
+    margin-top: 15%;
 }
 
 ::-webkit-scrollbar{
