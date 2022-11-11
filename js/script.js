@@ -8,10 +8,11 @@
 //localStorage.removeItem('item') //remove o item do localstorage
 
 ///////////////////////////////////////////////////////////////// INICIO ////////////////////
-
+//localStorage.clear()
 
 let scheduleItems = [];
 let dateItems = [];
+
 
 document.addEventListener('load', loadPage())
 
@@ -75,6 +76,48 @@ function loadPage(){
 
         
 }
+
+// Evento no botão que confirma a edição de uma atividade
+let confirmEditButton = document.querySelector('#confirmEditButton');
+confirmEditButton.addEventListener('click', ()=>{
+    let modal = document.querySelector('#modal');
+    let modalAlterActivity = document.querySelector('#modal-alterar-atividade');
+
+    let alterItemTitle = document.querySelector('#alterItemTitle').innerHTML;
+    let chars = alterItemTitle.split(' ');
+    let oldNameActivity = chars[1];
+    let date = document.querySelector('.date-alter').value
+
+    scheduleItems.forEach(activity => {
+        if(activity.title==oldNameActivity){
+            let name = document.querySelector('.name-modal-alter-atividade').value
+            let descricao = document.querySelector('.textAlterDesc').value
+            let date = document.querySelector('.date-alter').value
+            activity.title = name;
+            activity.description = descricao;
+            activity.date = date;
+        }
+    });
+    localStorage.removeItem('scheduleItems');
+    localStorage.setItem('scheduleItems', JSON.stringify(scheduleItems));
+    closeModal(modal, modalAlterActivity);
+    dateSectionCurrent = date;
+    location.reload();
+ 
+    
+})
+
+// Evento no botão que cancela a edição de uma atividade
+let cancelEditButton = document.querySelector('#cancelEditButton');
+cancelEditButton.addEventListener('click', ()=>{
+    let modal = document.querySelector('#modal');
+    let modalAlterAtividade = document.querySelector('#modal-alterar-atividade');
+    closeModal(modal, modalAlterAtividade);
+
+})
+
+
+
 
 // Abrir o modal de inserção de datas
 let addDateButton = document.querySelector('#add-date-button');
@@ -154,7 +197,7 @@ addActivityButton.addEventListener('click', ()=>{
 
 
 // Evento no botão que salva uma atividade em localstorage
-let confirmButton = document.querySelector('.confirmButton');
+let confirmButton = document.querySelector('#confirmButtonAdd');
 confirmButton.addEventListener('click', ()=>{
     let nameInput = document.querySelector('.addNameInput').value;
     let descInput = document.querySelector('.addDescInput').value;
@@ -233,7 +276,6 @@ function addActivityContainer(title, description, date){
     divBlocoTarefas.appendChild(h2);
     boxTarefas.appendChild(divBlocoTarefas);
 
-
 }
 
 
@@ -269,9 +311,6 @@ function addDate(Day, Month, Year, dayOfWeek){
 
 // Evento de click das datas
 const buttonDate = document.querySelectorAll('.eventos');
-
-
-// função para cada data
 buttonDate.forEach(button => {
     button.addEventListener('click', ()=>{
         let scheduleJSON = localStorage.getItem('scheduleItems');
@@ -317,6 +356,34 @@ buttonDate.forEach(button => {
                     count ++;
                 }
             });
+
+            // Abrir o modal para edição de atividades
+            let blocoTarefa = document.querySelectorAll('.blocoTarefas')
+            blocoTarefa.forEach(bloco => {
+                console.log(bloco)
+                let lapis = bloco.querySelector('#lapis');
+                lapis.addEventListener('click', ()=>{
+                    let modal = document.querySelector('#modal');
+                    let modalAlterarAtividade = document.querySelector('#modal-alterar-atividade')
+                    openModal(modal, modalAlterarAtividade);
+                    let alterItemTitle = document.querySelector('#alterItemTitle');
+                    alterItemTitle.innerHTML='';
+                    let titleTarefa = bloco.querySelector('#tipoTarefa').innerHTML;
+                    let descTarefa = bloco.querySelector('#descricao').innerHTML;
+                    alterItemTitle.appendChild(document.createTextNode(`Atividade: ${titleTarefa}`));
+                    let nameAlterAtividade = document.querySelector('.name-modal-alter-atividade');
+                    nameAlterAtividade.setAttribute('value', titleTarefa);
+                    let textAlterDesc = document.querySelector('.textAlterDesc');
+                    textAlterDesc.setAttribute('value', descTarefa);
+                    let dateActivity = document.querySelector('#dateActivity').innerHTML;
+                    let chars = dateActivity.split('/');
+                    let newDate = `${chars[2]}-${chars[1]}-${chars[0]}`
+                    let inputDateAlter = document.querySelector('.date-alter');
+                    inputDateAlter.setAttribute('value', newDate);
+                })
+            });
+
+
 
         }
     })

@@ -65,28 +65,26 @@
           <label for="date">Data:</label>
           <input  type="date" name="date" id="date" class="addDateInput" disabled>
         </fieldset>
-        <label class="confirmButton">Adicionar</label>
+        <label class="confirmButton" id="confirmButtonAdd">Adicionar</label>
       </form>
 
-      <form style="display: none;" >
-        <h2 id="alterItemTitle" >
-          Atividade: Fazer o almoço
-        </h2>
+      <form id="modal-alterar-atividade" style="display: none;" >
+        <h2 id="alterItemTitle" ></h2>
         <fieldset>
           <label for="name">Nome: </label>
-          <input type="text" name="name" id="name">
+          <input class="name-modal-alter-atividade" type="text" name="name" id="name">
         </fieldset>
         <fieldset>
           <label for="desc">Descrição: </label>
-          <div id="textAreaBox" ><input type="text" name="desc" id="desc"></div>
+          <div id="textAreaBox" ><input type="text" name="desc" id="desc" class="textAlterDesc"></div>
         </fieldset>
         <fieldset>
           <label for="date">Data:</label>
-          <input type="date" name="date" id="date">
+          <input type="date" name="date" id="date" class="date-alter">
         </fieldset>
         <div class="options" >
-          <input type="submit" value="Cancelar" class="cancelButton">
-          <input type="submit" value="Salvar" class="confirmButton">
+          <label value="Cancelar" class="cancelButton" id="cancelEditButton" >Cancelar</label>
+          <label value="Salvar" class="confirmButton" id="confirmEditButton">Confirmar</label>
         </div>
       </form>
 
