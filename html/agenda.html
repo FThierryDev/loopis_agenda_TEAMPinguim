@@ -13,8 +13,8 @@
 
     <section id="container">
 
-      <div id="title-box"><h1 id="title-text">Atividades do dia: <br>&nbsp;&nbsp;&nbsp;&nbsp; <h1 id="dateActivity">00/00/0000</h1></h1></div>
-      
+      <div id="title-box"><h1 id="title-text">Atividades do dia: <br>&nbsp;&nbsp;&nbsp;&nbsp; <h1 id="dateActivity">10/10/2022</h1></h1></div>
+        
       <div class="box-tarefas">
 
       </div>
@@ -29,20 +29,13 @@
       <div class="box-dates">
 
         <button class="eventos">
-          <p id="diaMes">00/00</p>
-          <p id="ano">2022</p>
+          <p id="diaMes">22/02</p>
+          <p id="ano">2003</p>
           <h2 id="diaHoje">
             <p id="hoje">Hoje</p>
           </h2>
         </button>
-        
-        <button class="eventos">
-          <p id="diaMes">00/00</p>
-          <p id="ano">2022</p>
-          <h2 id="diaHoje">
-            <p id="hoje">Hoje</p>
-          </h2>
-        </button>
+      
 
 
 
@@ -54,23 +47,25 @@
 
 
     <div id="modal" style="display: none;" >
-      <form style="display: none;" >
+
+      <form id="modal-form-add" style="display: none;" >
+        <img src="../assets/closeButton.png" alt="closeButton" id="close-addModal">
         <h1 id="addItemTitle">
           Nova Atividade
         </h1>
         <fieldset>
           <label for="name">Nome: </label>
-          <input type="text" name="name" id="name">
+          <input type="text" name="name" id="name" class="addNameInput">
         </fieldset>
         <fieldset>
           <label for="desc">Descrição: </label>
-          <div id="textAreaBox" ><input type="text" name="desc" id="desc"></div>
+          <div id="textAreaBox" ><input type="text" name="desc" id="desc" class="addDescInput"></div>
         </fieldset>
         <fieldset>
           <label for="date">Data:</label>
-          <input type="date" name="date" id="date">
+          <input  type="date" name="date" id="date" class="addDateInput" disabled>
         </fieldset>
-        <input type="submit" value="Adicionar" class="confirmButton">
+        <label class="confirmButton">Adicionar</label>
       </form>
 
       <form style="display: none;" >
@@ -91,7 +86,7 @@
         </fieldset>
         <div class="options" >
           <input type="submit" value="Cancelar" class="cancelButton">
-          <input type="submit" value="Adicionar" class="confirmButton">
+          <input type="submit" value="Salvar" class="confirmButton">
         </div>
       </form>
 

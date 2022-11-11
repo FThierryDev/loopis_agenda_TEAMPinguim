@@ -256,6 +256,7 @@ div#modal {
     justify-content: center;
     align-items: center;
     position: fixed;
+
 }
 
 form {
@@ -336,7 +337,13 @@ h2#alterItemTitle {
     font-size: 24px;
 }
 
-input.confirmButton {
+#close-addModal{
+    height: 8vh;
+    margin-bottom: 2%;
+    margin-left: 90%;
+}
+
+.confirmButton {
     border: none;
     font-size: 36px;
     padding: 5px;
