@@ -221,14 +221,14 @@ confirmButton.addEventListener('click', ()=>{
     let descInput = document.querySelector('.addDescInput').value;
     let dateInput = document.querySelector('.addDateInput').value;
 
-// PAREI AQUI NESSE FOREACH, TENTANDO FAZER COM QUE NÃO SEJA POSSIVEL ADICIONAR ITENS REPETIDOS NO ARRAY!
-    scheduleItems.forEach(element=>{
-        if(element.title===nameInput && element.date===dateInput){
-            let alert = document.querySelector('#alert-equal-name');
-            alert.setAttribute('style', 'display: flex')
+// PAREI AQUI<<< NESSE FOREACH, TENTANDO FAZER COM QUE NÃO SEJA POSSIVEL ADICIONAR ITENS REPETIDOS NO ARRAY!
+    // scheduleItems.forEach(element=>{
+    //     if(element.title===nameInput && element.date===dateInput){
+    //         let alert = document.querySelector('#alert-equal-name');
+    //         alert.setAttribute('style', 'display: flex')
             
-        }
-    })
+    //     }
+    // })
 
 ///////////////////////////////////////////////////////////////////
     addActivityLocalStorage(nameInput, descInput, dateInput);
