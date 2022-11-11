@@ -76,8 +76,43 @@ function loadPage(){
         
 }
 
+// Abrir o modal de inserção de datas
+let addDateButton = document.querySelector('#add-date-button');
+addDateButton.addEventListener('click', ()=>{
+    let modal = document.querySelector('#modal');
+    let modalAddDate = document.querySelector('.add-date-modal');
+    openModal(modal, modalAddDate);
+})
 
+// Fechar o modal de inserção de datas
+let buttonCloseModalDate = document.querySelector('#button-close-modal-date');
+buttonCloseModalDate.addEventListener('click', ()=>{
+    let modal = document.querySelector('#modal');
+    let modalAddDate = document.querySelector('.add-date-modal');
+    closeModal(modal, modalAddDate)
+})
 
+// Evento para botão que ADICIONA uma DATA no localstorage
+let buttonAddDate = document.querySelector('#button-add-date');
+buttonAddDate.addEventListener('click', ()=>{
+    let inputDateValue = document.querySelector('#scheduleDate');
+    let date = inputDateValue.value;
+    let chars = date.split('-')
+    let objDateToday = {
+        day: chars[2],
+        month: chars[1],
+        year: chars[0],
+        dayOfWeek: 'Hoje'
+    }
+    let dataItemsJSON = localStorage.getItem('dateItems');
+    let arrayDateItems = JSON.parse(dataItemsJSON);
+    dateItems = [];
+    arrayDateItems.push(objDateToday);
+    dateItems = arrayDateItems;
+    localStorage.removeItem('dateItems');
+    localStorage.setItem('dateItems', JSON.stringify(dateItems));
+    location.reload()
+})
 
 // Evento para ABRIR o modal de adição de atividades
 let addActivityButton = document.querySelector('#add-activity-button');
