@@ -415,3 +415,9 @@ input#scheduleDate {
     width: 180pt;
     font-size: 30px;
 }
+
+#alert-equal-name{
+    background-color: rgba(255, 11, 11, 0.397);
+    padding: 20px;
+    border-radius: 10px;
+}

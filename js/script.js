@@ -77,6 +77,24 @@ function loadPage(){
         
 }
 
+// Evento no botão do modal que CONFIRMA a EXCLUSÃO da atividade
+let confirmRemoveModal = document.querySelector('.confirm-remove-item');
+confirmRemoveModal.addEventListener('click', ()=>{
+    let titleActivity = document.querySelector('#titleActivity').innerHTML;
+    scheduleItems.forEach(activity=>{
+        if(titleActivity==activity.title){
+            let index = scheduleItems.indexOf(activity);
+            console.log('teste')
+            scheduleItems.splice(index, 1);
+        }
+    });
+    localStorage.removeItem('scheduleItems');
+    localStorage.setItem('scheduleItems', JSON.stringify(scheduleItems));
+    location.reload();
+
+})
+
+
 // Evento no botão que confirma a edição de uma atividade
 let confirmEditButton = document.querySelector('#confirmEditButton');
 confirmEditButton.addEventListener('click', ()=>{
@@ -203,11 +221,22 @@ confirmButton.addEventListener('click', ()=>{
     let descInput = document.querySelector('.addDescInput').value;
     let dateInput = document.querySelector('.addDateInput').value;
 
+// PAREI AQUI NESSE FOREACH, TENTANDO FAZER COM QUE NÃO SEJA POSSIVEL ADICIONAR ITENS REPETIDOS NO ARRAY!
+    scheduleItems.forEach(element=>{
+        if(element.title===nameInput && element.date===dateInput){
+            let alert = document.querySelector('#alert-equal-name');
+            alert.setAttribute('style', 'display: flex')
+            
+        }
+    })
+
+///////////////////////////////////////////////////////////////////
     addActivityLocalStorage(nameInput, descInput, dateInput);
 
     let modal = document.querySelector('#modal');
     let modalFormAdd = document.querySelector('#modal-form-add');
     closeModal(modal, modalFormAdd);
+
 
 
 }) 
@@ -216,6 +245,7 @@ confirmButton.addEventListener('click', ()=>{
 
 // Adiciona uma atividade no localstorage
 function addActivityLocalStorage (name, description, date){
+
     let obj = {
         title: name,
         description: description,
@@ -381,8 +411,19 @@ buttonDate.forEach(button => {
                     let inputDateAlter = document.querySelector('.date-alter');
                     inputDateAlter.setAttribute('value', newDate);
                 })
-            });
 
+                // Abrir o modal para excluir atividade
+                let lixeiro = bloco.querySelector('#lixeiro');
+                lixeiro.addEventListener('click', ()=>{
+                    let modal = document.querySelector('#modal');
+                    let modalRemoveItem = document.querySelector('.modal-remove-item');
+                    openModal(modal, modalRemoveItem);
+                    let nameActivity = bloco.querySelector('#tipoTarefa').innerHTML
+                    let titleActivity = document.querySelector('#titleActivity');
+                    titleActivity.innerHTML = '';
+                    titleActivity.appendChild(document.createTextNode(nameActivity));
+                })
+            });
 
 
         }
