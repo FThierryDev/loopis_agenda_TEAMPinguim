@@ -49,6 +49,7 @@
     <div id="modal" style="display: none;" >
 
       <form id="modal-form-add" style="display: none;" >
+        <div id="alert-equal-name" style="display: none;">Já existe uma atividade com esse nome!</div>
         <img src="../assets/closeButton.png" alt="closeButton" id="close-addModal">
         <h1 id="addItemTitle">
           Nova Atividade
@@ -88,13 +89,13 @@
         </div>
       </form>
 
-      <div id="updateItem" style="display: none;">
-        <p id="removeText" >Deseja excluir a seguinte atividade:<br> <strong>Fazer o almoço</strong> </p>
+      <div class="modal-remove-item" id="updateItem" style="display: none;">
+        <p id="removeText" >Deseja excluir a seguinte atividade:<br> <strong id="titleActivity">Fazer o almoço</strong> </p>
         <div class="options" >
-          <button id="cancel">
+          <button class="cancel-remove-item" id="cancel">
             Cancelar
           </button>
-          <button id="remove" >
+          <button class="confirm-remove-item" id="remove" >
             Excluir
           </button>
         </div>
