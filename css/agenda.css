@@ -353,7 +353,8 @@ h2#alterItemTitle {
     margin-top: 20pt;
 }
 
-input.cancelButton {
+.cancelButton {
+    
     border: none;
     font-size: 36px;
     padding: 5px;
