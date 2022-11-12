@@ -138,7 +138,7 @@ h2#tarefa > img {
     top: 16px;
 }
 
-#lateral {
+section#lateral {
     position: absolute;
     width: 267px;
     height: 100%;
@@ -159,7 +159,6 @@ h2#tarefa > img {
 }
 
 .eventos {
-    position: relative;
     margin-left: 50px;
     margin-top: 20px;
     background: var(--white);
@@ -167,55 +166,41 @@ h2#tarefa > img {
     height: 130px;
     width: 150px;
     border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 #diaMes {
-    position: absolute;
-    left: 23%;
-    right: 17.24%;
-    top: 05%;
-    bottom: 34.34%;
     font-family: 'Saira';
     font-style: normal;
     font-weight: 400;
     font-size: 36px;
-    line-height: 57px;
-    display: flex;
-    align-items: center;
-    text-align: center;
     color: var(--black);
+    margin-top: 12px;
 }
 
 #ano{
-    position: absolute;
-    left: 37%;
-    right: 26.44%;
-    top: 47%;
-    bottom: 34.34%;
     font-family: 'Saira';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
-    line-height: 31px;
     display: flex;
     align-items: center;
     text-align: center;
     color: var(--black);
+    margin-bottom: 10pt;
 }
 
 #diaHoje {
-    position: relative;
-    margin-top: 55%;
-    margin-left: 28%;
     background: var(--light-gray);
     border-radius: 75px;
     height: 20px;
-    width: 65px;
+    width: 100px;
 }
 
 #hoje { 
-    position: absolute;
-    left: 15px;
     font-family: 'Rufina';
     font-style: normal;
     font-weight: 400;
@@ -223,7 +208,6 @@ h2#tarefa > img {
     line-height: 22px;
     display: flex;
     align-items: center;
-    text-align: center;
     color: var(--black);
 }
 
@@ -351,6 +335,7 @@ h2#alterItemTitle {
     border-radius: 40px;
     background-color: var(--green);
     margin-top: 20pt;
+    text-align: center;
 }
 
 .cancelButton {
@@ -362,6 +347,7 @@ h2#alterItemTitle {
     border-radius: 40px;
     background-color: var(--gray);
     margin-top: 20pt;
+    text-align: center;
 }
 
 div.options {
