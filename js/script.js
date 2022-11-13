@@ -1,15 +1,4 @@
 
-//localStorage.setItem('peoples', JSON.stringify(peoples)); // salva o array em localstorage, é preciso salva-lo em JSON, por isso a conversão..
-
-//let arrayPeoples = localStorage.getItem('peoples'); // recupero o array peoples do localstorage, ele vem em JSON e não objeto!
-
-//console.log(JSON.parse(arrayPeoples)[1].name); // exibo o array, sendo q preciso converte-lo antes em objeto novamente, aqui exibo o primeiro objeto do array sendo sua propriedade nome.
-
-//localStorage.removeItem('item') //remove o item do localstorage
-
-///////////////////////////////////////////////////////////////// INICIO ////////////////////
-//localStorage.clear()
-
 let scheduleItems = [];
 let dateItems = [];
 
@@ -245,7 +234,6 @@ confirmButton.addEventListener('click', ()=>{
     let valueStyleAlert = alert.getAttribute('style');
     // Verifica se existe o alerta de atividades iguais na tela, se sim remove ele  
     if(valueStyleAlert){
-        console.log('true')
         alert.setAttribute('style', 'display: none')
     }    
 
@@ -253,7 +241,7 @@ confirmButton.addEventListener('click', ()=>{
     let descInput = document.querySelector('.addDescInput').value;
     let dateInput = document.querySelector('.addDateInput').value;
     let count = 0;
-// PAREI AQUI<<< NESSE FOREACH, TENTANDO FAZER COM QUE NÃO SEJA POSSIVEL ADICIONAR ITENS REPETIDOS NO ARRAY!
+
     scheduleItems.forEach(element=>{
         if(element.title===nameInput && element.date===dateInput){
             count ++;
