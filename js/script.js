@@ -8,6 +8,7 @@ document.addEventListener('load', loadPage())
 function loadPage(){
     // Adiciona um bloco com a data atual, caso não exista valores na variavel de datas do localstorage
 
+ 
         let dateItemsJSON = localStorage.getItem('dateItems');
         let arrayDateItems = JSON.parse(dateItemsJSON);
         if(!arrayDateItems || arrayDateItems[0]==null){
@@ -69,10 +70,13 @@ function loadPage(){
 
 // Evento no botão do modal que CONFIRMA a EXCLUSÃO da atividade
 let confirmRemoveModal = document.querySelector('.confirm-remove-item');
-let modal = document.querySelector('#modal');
-let modalRemoveItem = document.querySelector('#modal-remove-item');
+
 
 confirmRemoveModal.addEventListener('click', ()=>{
+    let modal = document.querySelector('#modal');
+    let modalRemoveItem = document.querySelector('.modal-remove-item');
+    closeModal(modal, modalRemoveItem)
+
     let titleActivity = document.querySelector('#titleActivity').innerHTML;
     let date = '';
     scheduleItems.forEach(activity=>{
@@ -85,6 +89,8 @@ confirmRemoveModal.addEventListener('click', ()=>{
     localStorage.removeItem('scheduleItems');
     localStorage.setItem('scheduleItems', JSON.stringify(scheduleItems));
     
+    
+
     let buttonsDate = document.querySelectorAll('.eventos')
     buttonsDate.forEach(button=>{
         let diaMes = button.querySelector('#diaMes').innerHTML;
@@ -96,7 +102,6 @@ confirmRemoveModal.addEventListener('click', ()=>{
         }
     })
 
-    closeModal(modal, modalRemoveItem);
 
 })
 
@@ -279,7 +284,6 @@ confirmButton.addEventListener('click', ()=>{
     let count = 0;
 
 
-// PAREI AQUI<<< NESSE FOREACH, TENTANDO FAZER COM QUE NÃO SEJA POSSIVEL ADICIONAR ITENS REPETIDOS NO ARRAY!
     scheduleItems.forEach(element=>{
         if(element.title===nameInput && element.date===dateInput){
             count ++;
@@ -437,7 +441,23 @@ buttonDate.forEach(button => {
             dateActivity.innerHTML = "";
             dateActivity.appendChild(document.createTextNode(dateButton))
 
-        if(!scheduleArray || scheduleArray[0]==null){
+        let thereActivity = 0;  
+        scheduleArray.forEach(element=>{
+            if(element.date==newDate){
+                thereActivity++;
+            }
+        })
+
+        let boxTarefas = document.querySelector('.box-tarefas');
+        let blocoTarefas = document.querySelectorAll('.blocoTarefas');
+        //verificando se já existe algum bloco de tarefas, para então limpar-los da tela antes de adicionar os blocos referentes a data
+        if(blocoTarefas){
+            blocoTarefas.forEach(bloco => {
+                boxTarefas.removeChild(bloco);
+            });
+        }
+
+        if(thereActivity==0){
                 let boxTarefas = document.querySelector('.box-tarefas');
                 let element = document.querySelector('#alertNoActivities');
                 if(element){
