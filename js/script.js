@@ -526,7 +526,8 @@ buttonDate.forEach(button => {
                     let inputDateAlter = document.querySelector('.date-alter');
                     inputDateAlter.setAttribute('value', newDate);
                 })
-
+  
+                
                 // Abrir o modal para excluir atividade
                 let lixeiro = bloco.querySelector('#lixeiro');
                 lixeiro.addEventListener('click', ()=>{
