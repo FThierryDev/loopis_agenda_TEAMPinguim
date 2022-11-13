@@ -278,8 +278,6 @@ confirmButton.addEventListener('click', ()=>{
     let dateInput = document.querySelector('.addDateInput').value;
     let count = 0;
 
-
-// PAREI AQUI<<< NESSE FOREACH, TENTANDO FAZER COM QUE NÃO SEJA POSSIVEL ADICIONAR ITENS REPETIDOS NO ARRAY!
     scheduleItems.forEach(element=>{
         if(element.title===nameInput && element.date===dateInput){
             count ++;
