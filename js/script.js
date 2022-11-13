@@ -241,27 +241,35 @@ addActivityButton.addEventListener('click', ()=>{
 // Evento no botão que salva uma atividade em localstorage
 let confirmButton = document.querySelector('#confirmButtonAdd');
 confirmButton.addEventListener('click', ()=>{
+    let alert = document.querySelector('#alert-equal-name');
+    let valueStyleAlert = alert.getAttribute('style');
+    // Verifica se existe o alerta de atividades iguais na tela, se sim remove ele  
+    if(valueStyleAlert){
+        console.log('true')
+        alert.setAttribute('style', 'display: none')
+    }    
+
     let nameInput = document.querySelector('.addNameInput').value;
     let descInput = document.querySelector('.addDescInput').value;
     let dateInput = document.querySelector('.addDateInput').value;
-
+    let count = 0;
 // PAREI AQUI<<< NESSE FOREACH, TENTANDO FAZER COM QUE NÃO SEJA POSSIVEL ADICIONAR ITENS REPETIDOS NO ARRAY!
-    // scheduleItems.forEach(element=>{
-    //     if(element.title===nameInput && element.date===dateInput){
-    //         let alert = document.querySelector('#alert-equal-name');
-    //         alert.setAttribute('style', 'display: flex')
-            
-    //     }
-    // })
+    scheduleItems.forEach(element=>{
+        if(element.title===nameInput && element.date===dateInput){
+            count ++;
+        }
+    })
 
-///////////////////////////////////////////////////////////////////
-    addActivityLocalStorage(nameInput, descInput, dateInput);
+    if(count>0){
+        let alert = document.querySelector('#alert-equal-name');
+        alert.setAttribute('style', 'display: flex')
+    }else{
+        addActivityLocalStorage(nameInput, descInput, dateInput);
 
-    let modal = document.querySelector('#modal');
-    let modalFormAdd = document.querySelector('#modal-form-add');
-    closeModal(modal, modalFormAdd);
-
-
+        let modal = document.querySelector('#modal');
+        let modalFormAdd = document.querySelector('#modal-form-add');
+        closeModal(modal, modalFormAdd);
+    }
 
 }) 
 
