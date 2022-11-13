@@ -20,6 +20,7 @@ function loadPage(){
             let currentYear = date.getFullYear();  // ano atual
             let dayOfWeek = date.getDay();  // dia da semana em indice, sendo 0 o domingo e continua..
             let dayOfWeekText;
+
             switch(dayOfWeek){
                 case 0: dayOfWeekText = 'Domingo';
                 break;
@@ -39,7 +40,7 @@ function loadPage(){
             
             let objDateToday = {
                 day: currentDay,
-                month: currentMonth,
+                month: currentMonth+1,
                 year: currentYear,
                 dayOfWeek: dayOfWeekText
             }
@@ -103,6 +104,14 @@ confirmRemoveModal.addEventListener('click', ()=>{
     })
 
 
+})
+
+// Evento no botão que CANCELA a exclusão do modal
+let buttonCancelRemove = document.querySelector('.cancel-remove-item');
+buttonCancelRemove.addEventListener('click', ()=>{
+    let modal = document.querySelector('#modal');
+    let modalRemoveItem = document.querySelector('.modal-remove-item');
+    closeModal(modal, modalRemoveItem)
 })
 
 
@@ -289,7 +298,7 @@ confirmButton.addEventListener('click', ()=>{
         }
     })
 
-    
+
     if(count>0 || nameInput=='' || descInput==''){
         if(nameInput=='' || descInput==''){
             alert.setAttribute('style', 'display: flex;')
