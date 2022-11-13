@@ -289,6 +289,7 @@ confirmButton.addEventListener('click', ()=>{
         }
     })
 
+    
     if(count>0 || nameInput=='' || descInput==''){
         if(nameInput=='' || descInput==''){
             alert.setAttribute('style', 'display: flex;')
