@@ -136,7 +136,6 @@ cancelEditButton.addEventListener('click', ()=>{
 
 
 
-
 // Abrir o modal de inserção de datas
 let addDateButton = document.querySelector('#add-date-button');
 addDateButton.addEventListener('click', ()=>{
@@ -153,17 +152,42 @@ buttonCloseModalDate.addEventListener('click', ()=>{
     closeModal(modal, modalAddDate)
 })
 
+
+
 // Evento para botão que ADICIONA uma DATA no localstorage
 let buttonAddDate = document.querySelector('#button-add-date');
 buttonAddDate.addEventListener('click', ()=>{
     let inputDateValue = document.querySelector('#scheduleDate');
-    let date = inputDateValue.value;
-    let chars = date.split('-')
+    let dateValue = inputDateValue.value;
+    let chars = dateValue.split('-')
+
+    let dateMethod = new Date(chars[0],chars[1]-1,chars[2]);
+    let dayOfWeek = dateMethod.getDay();
+    let dayOfWeekText;
+    switch(dayOfWeek){
+        case 0: dayOfWeekText = 'Domingo';
+        break;
+        case 1: dayOfWeekText = 'Segunda';
+        break;
+        case 2: dayOfWeekText = 'Terça';       
+        break;
+        case 3: dayOfWeekText = 'Quarta';
+        break;
+        case 4: dayOfWeekText = 'Quinta';
+        break;
+        case 5: dayOfWeekText = 'Sexta';
+        break;
+        case 6: dayOfWeekText = 'Sabádo';
+        break;
+    }
+
+console.log(dayOfWeekText);
+
     let objDateToday = {
         day: chars[2],
         month: chars[1],
         year: chars[0],
-        dayOfWeek: 'Hoje'
+        dayOfWeek: dayOfWeekText
     }
     let dataItemsJSON = localStorage.getItem('dateItems');
     let arrayDateItems = JSON.parse(dataItemsJSON);
@@ -370,6 +394,7 @@ buttonDate.forEach(button => {
             
         // Adiciona atividade na lista referente à data
         }else{
+ 
             let boxTarefas = document.querySelector('.box-tarefas');
             let blocoTarefas = document.querySelectorAll('.blocoTarefas');
             //verificando se já existe algum bloco de tarefas, para então limpar-los da tela antes de adicionar os blocos referentes a data
@@ -386,6 +411,11 @@ buttonDate.forEach(button => {
                     count ++;
                 }
             });
+            //verificando se existe o alerta de que não há atividades, caso exista limpe ele da tela
+            let element = document.querySelector('#alertNoActivities');
+            if(element){
+                boxTarefas.removeChild(element);
+            }
 
             // Abrir o modal para edição de atividades
             let blocoTarefa = document.querySelectorAll('.blocoTarefas')
