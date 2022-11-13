@@ -1,15 +1,4 @@
 
-//localStorage.setItem('peoples', JSON.stringify(peoples)); // salva o array em localstorage, é preciso salva-lo em JSON, por isso a conversão..
-
-//let arrayPeoples = localStorage.getItem('peoples'); // recupero o array peoples do localstorage, ele vem em JSON e não objeto!
-
-//console.log(JSON.parse(arrayPeoples)[1].name); // exibo o array, sendo q preciso converte-lo antes em objeto novamente, aqui exibo o primeiro objeto do array sendo sua propriedade nome.
-
-//localStorage.removeItem('item') //remove o item do localstorage
-
-///////////////////////////////////////////////////////////////// INICIO ////////////////////
-//localStorage.clear()
-
 let scheduleItems = [];
 let dateItems = [];
 
@@ -64,6 +53,7 @@ function loadPage(){
             arrayCurrentDateItems.forEach(objDate => {
                 dateItems.push(objDate);
                 addDate(objDate.day, objDate.month, objDate.year, objDate.dayOfWeek);
+
             });
 
             let scheduleItemsJSON = localStorage.getItem('scheduleItems');
@@ -79,18 +69,34 @@ function loadPage(){
 
 // Evento no botão do modal que CONFIRMA a EXCLUSÃO da atividade
 let confirmRemoveModal = document.querySelector('.confirm-remove-item');
+let modal = document.querySelector('#modal');
+let modalRemoveItem = document.querySelector('#modal-remove-item');
+
 confirmRemoveModal.addEventListener('click', ()=>{
     let titleActivity = document.querySelector('#titleActivity').innerHTML;
+    let date = '';
     scheduleItems.forEach(activity=>{
         if(titleActivity==activity.title){
             let index = scheduleItems.indexOf(activity);
-            console.log('teste')
             scheduleItems.splice(index, 1);
+            date = activity.date;
         }
     });
     localStorage.removeItem('scheduleItems');
     localStorage.setItem('scheduleItems', JSON.stringify(scheduleItems));
-    location.reload();
+    
+    let buttonsDate = document.querySelectorAll('.eventos')
+    buttonsDate.forEach(button=>{
+        let diaMes = button.querySelector('#diaMes').innerHTML;
+        let ano = button.querySelector('#ano').innerHTML;
+        let chars = diaMes.split('/');
+        let dateButton = `${ano}-${chars[1]}-${chars[0]}`
+        if(date==dateButton){
+            button.dispatchEvent(new Event('click'));
+        }
+    })
+
+    closeModal(modal, modalRemoveItem);
 
 })
 
@@ -105,7 +111,6 @@ confirmEditButton.addEventListener('click', ()=>{
     let chars = alterItemTitle.split(' ');
     let oldNameActivity = chars[1];
     let date = document.querySelector('.date-alter').value
-
     scheduleItems.forEach(activity => {
         if(activity.title==oldNameActivity){
             let name = document.querySelector('.name-modal-alter-atividade').value
@@ -118,9 +123,20 @@ confirmEditButton.addEventListener('click', ()=>{
     });
     localStorage.removeItem('scheduleItems');
     localStorage.setItem('scheduleItems', JSON.stringify(scheduleItems));
+
+    let buttonsDate = document.querySelectorAll('.eventos')
+    buttonsDate.forEach(button=>{
+        let diaMes = button.querySelector('#diaMes').innerHTML;
+        let ano = button.querySelector('#ano').innerHTML;
+        let chars = diaMes.split('/');
+        let dateButton = `${ano}-${chars[1]}-${chars[0]}`
+        if(date==dateButton){
+            button.dispatchEvent(new Event('click'));
+        }
+    })
+
     closeModal(modal, modalAlterActivity);
-    dateSectionCurrent = date;
-    location.reload();
+
  
     
 })
@@ -181,7 +197,6 @@ buttonAddDate.addEventListener('click', ()=>{
         break;
     }
 
-console.log(dayOfWeekText);
 
     let objDateToday = {
         day: chars[2],
@@ -202,10 +217,17 @@ console.log(dayOfWeekText);
 // Evento para ABRIR o modal de adição de atividades
 let addActivityButton = document.querySelector('#add-activity-button');
 addActivityButton.addEventListener('click', ()=>{
-    // Abre o modal de adição
+
+    let alert = document.querySelector('#alert-equal-name');
+    let valueStyleAlert = alert.getAttribute('style');
+    // Verifica se existe o alerta de atividades iguais ou preencha campo na tela, se sim remove ele  
+    if(valueStyleAlert){
+
+        alert.setAttribute('style', 'display: none')
+    }   
+
         let addDateInput = document.querySelector('.addDateInput')
         let dateActivity = document.querySelector('#dateActivity').innerHTML
-        console.log(dateActivity)
         let chars = dateActivity.split('/')
         let newDate = `${chars[2]}-${chars[1]}-${chars[0]}`;
         addDateInput.setAttribute('value', newDate);
@@ -213,7 +235,9 @@ addActivityButton.addEventListener('click', ()=>{
         let modal = document.querySelector('#modal');
         let modalFormAdd = document.querySelector('#modal-form-add');
         openModal(modal, modalFormAdd);
-    
+        // Limpando inputs do modal
+        let nameInput = document.querySelector('.addNameInput').value='';
+        let descInput = document.querySelector('.addDescInput').value='';
 
    
 })
@@ -244,15 +268,17 @@ confirmButton.addEventListener('click', ()=>{
     let alert = document.querySelector('#alert-equal-name');
     let valueStyleAlert = alert.getAttribute('style');
     // Verifica se existe o alerta de atividades iguais na tela, se sim remove ele  
-    if(valueStyleAlert){
-        console.log('true')
-        alert.setAttribute('style', 'display: none')
-    }    
+    let text = alert.querySelector('#alert-equal-name-text');
+    if(text){
+        text.innerHTML='';
+    }     
 
     let nameInput = document.querySelector('.addNameInput').value;
     let descInput = document.querySelector('.addDescInput').value;
     let dateInput = document.querySelector('.addDateInput').value;
     let count = 0;
+
+
 // PAREI AQUI<<< NESSE FOREACH, TENTANDO FAZER COM QUE NÃO SEJA POSSIVEL ADICIONAR ITENS REPETIDOS NO ARRAY!
     scheduleItems.forEach(element=>{
         if(element.title===nameInput && element.date===dateInput){
@@ -260,15 +286,36 @@ confirmButton.addEventListener('click', ()=>{
         }
     })
 
-    if(count>0){
-        let alert = document.querySelector('#alert-equal-name');
-        alert.setAttribute('style', 'display: flex')
+    if(count>0 || nameInput=='' || descInput==''){
+        if(nameInput=='' || descInput==''){
+            alert.setAttribute('style', 'display: flex;')
+            text.innerHTML='Preencha todos os campos!'
+            return
+        }
+        alert.setAttribute('style', 'display: flex;')
+        text.innerHTML='Não é possivel adicionar atividades com o mesmo nome!'
+       
+       
     }else{
         addActivityLocalStorage(nameInput, descInput, dateInput);
 
         let modal = document.querySelector('#modal');
         let modalFormAdd = document.querySelector('#modal-form-add');
         closeModal(modal, modalFormAdd);
+
+        let buttonsDate = document.querySelectorAll('.eventos')
+        buttonsDate.forEach(button=>{
+            let diaMes = button.querySelector('#diaMes').innerHTML;
+            let ano = button.querySelector('#ano').innerHTML;
+            let chars = diaMes.split('/');
+            let date = `${ano}-${chars[1]}-${chars[0]}`
+            if(dateInput==date){
+                button.dispatchEvent(new Event('click'));
+            }
+        })
+
+
+ 
     }
 
 }) 
@@ -344,6 +391,7 @@ function addActivityContainer(title, description, date){
 
 // Adiciona uma data à barra lateral
 function addDate(Day, Month, Year, dayOfWeek){
+
 
     const boxDates = document.querySelector('.box-dates');
     let buttonDate = document.createElement('button')
@@ -428,7 +476,7 @@ buttonDate.forEach(button => {
             // Abrir o modal para edição de atividades
             let blocoTarefa = document.querySelectorAll('.blocoTarefas')
             blocoTarefa.forEach(bloco => {
-                console.log(bloco)
+                
                 let lapis = bloco.querySelector('#lapis');
                 lapis.addEventListener('click', ()=>{
                     let modal = document.querySelector('#modal');
