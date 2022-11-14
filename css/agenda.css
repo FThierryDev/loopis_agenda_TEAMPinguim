@@ -9,22 +9,21 @@ body {
     height: 95%;
     left: 24%;
     top: 30px;
-    bottom: 30px
-    
+    bottom: 30px;
 }
 
 #title-box {
     position: relative;
     width: 500px;
     height: 120px;
-    margin-left: 25%;
+    margin-left: 28%;
     margin-top: 2%;
     background: var(--gray);
     border-radius: 10px;
-    
+
 }
 
-#title-text{
+#title-text {
     position: relative;
     top: 25%;
     left: 30%;
@@ -39,18 +38,17 @@ h2 {
     color: var(--black);
 }
 
-#dateActivity{
+#dateActivity {
     margin-left: 36%;
 }
 
-.box-tarefas{
-    position: relative;
+.box-tarefas {
     height: 60vh;
     overflow-y: auto;
-    
+
 }
 
-.box-dates{
+.box-dates {
     position: relative;
     overflow-y: auto;
     height: 93vh;
@@ -60,7 +58,7 @@ h2 {
     position: relative;
     width: 340px;
     height: 40px;
-    margin-left: 35%;
+    margin-left: 37%;
     margin-top: 1%;
     background: var(--yellow);
     border-radius: 43px;
@@ -68,50 +66,49 @@ h2 {
 }
 
 .blocoTarefas {
+    flex: 1;
     margin-top: 2%;
     margin-left: 5%;
     margin-right: 5%;
     padding-bottom: 10px;
-    position: relative;
     background: var(--gray);
     border-radius: 43px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 
 
 #tipoTarefa {
-    position: absolute;
-    width: 170.18px;
-    height: 24px;
-    left: 30px;
-    top: 24px;
+    width: 100vh;
+    height: 50pt;
     font-weight: 400;
     font-size: 20px;
     line-height: 27px;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     letter-spacing: 0.03em;
     color: var(--black);
     margin-bottom: 7px;
+    margin-left: 20pt;
+    margin-right: 5pt;
 }
 
 #tarefa {
-    position: relative;
-    width: 600px;
-    height: 60px;
-    left: 200px;
-    top: 5px;
+    width: 75%;
+    margin-top: 10px;
     background: var(--light-gray);
     border-radius: 75px;
+    margin-right: 80pt;
 }
 
 #descricao {
-    position: absolute;
-    width: 488.53px;
+    display: flex;
+    width: 100vh;
     height: 56px;
-    left: 50px;
-    top: 1px;
-    margin-bottom: 10px;
     font-weight: 400;
     font-size: 15px;
     line-height: 20px;
@@ -119,24 +116,25 @@ h2 {
     text-align: center;
     letter-spacing: 0.03em;
     color: var(--black);
+    margin-left: 20px;
+    margin-top: 5px;
 }
 
-h2#tarefa > img {
-    position: absolute;
+h2#tarefa>img {
     width: 25px;
     height: 28px;
 }
 
 #lapis {
-    left: 612px;
-    right: 10%;
-    top: 16px;
+    position: relative;
+    right: -45pt;
+    top: 15px;
 }
 
 #lixeiro {
-    left: 652px;
-    right: 10%;
-    top: 16px;
+    position: relative;
+    right: -60pt;
+    top: 15px;
 }
 
 section#lateral {
@@ -151,7 +149,7 @@ section#lateral {
 
 #add-date-button {
     position: absolute;
-    margin-left:40%;
+    margin-left: 40%;
     bottom: 0px;
     width: 40px;
     height: 40px;
@@ -182,7 +180,7 @@ section#lateral {
     margin-top: 12px;
 }
 
-#ano{
+#ano {
     font-family: 'Saira';
     font-style: normal;
     font-weight: 400;
@@ -201,7 +199,7 @@ section#lateral {
     width: 100px;
 }
 
-#hoje { 
+#hoje {
     font-family: 'Rufina';
     font-style: normal;
     font-weight: 400;
@@ -212,16 +210,17 @@ section#lateral {
     color: var(--black);
 }
 
-#alertNoActivities{
+#alertNoActivities {
     margin-left: 7%;
     margin-top: 15%;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     background-color: var(--gray);
     border-radius: 5px;
 }
-::-webkit-scrollbar-thumb{
+
+::-webkit-scrollbar-thumb {
     background: var(--dark-gray);
     border-radius: 5px;
 
@@ -264,7 +263,7 @@ fieldset {
     margin-bottom: 15px;
 }
 
-input[type = "date"]#date {
+input[type="date"]#date {
     width: 120pt;
     text-align: center;
     border-radius: 20px;
@@ -299,7 +298,7 @@ input#desc {
     text-indent: 10pt;
 }
 
-input[type = "text"]{
+input[type="text"] {
     border: none;
     background-color: var(--gray);
     border-radius: 20px;
@@ -322,7 +321,7 @@ h2#alterItemTitle {
     font-size: 24px;
 }
 
-#close-addModal{
+#close-addModal {
     height: 8vh;
     margin-bottom: 2%;
     margin-left: 90%;
@@ -340,7 +339,7 @@ h2#alterItemTitle {
 }
 
 .cancelButton {
-    
+
     border: none;
     font-size: 36px;
     padding: 5px;
@@ -369,7 +368,8 @@ div#updateItem {
     background-color: var(--light-gray);
 }
 
-button#remove, button#cancel {
+button#remove,
+button#cancel {
     width: 45%;
     border: none;
     border-radius: 20px;
@@ -403,8 +403,18 @@ input#scheduleDate {
     font-size: 30px;
 }
 
-#alert-equal-name{
+#alert-equal-name {
     background-color: rgba(255, 11, 11, 0.397);
     padding: 20px;
     border-radius: 10px;
+}
+
+@media (min-width: 1400px) {
+    #title-box{
+        margin-left: 32%;
+    }
+
+    #add-activity-button{
+        margin-left: 40%;
+    }
 }
