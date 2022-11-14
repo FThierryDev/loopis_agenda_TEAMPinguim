@@ -66,11 +66,9 @@ h2 {
 }
 
 .blocoTarefas {
-    flex: 1;
     margin-top: 2%;
     margin-left: 5%;
     margin-right: 5%;
-    padding-bottom: 10px;
     background: var(--gray);
     border-radius: 43px;
     display: flex;
@@ -82,7 +80,7 @@ h2 {
 
 
 #tipoTarefa {
-    width: 100vh;
+    width: 17vh;
     height: 50pt;
     font-weight: 400;
     font-size: 20px;
@@ -92,9 +90,7 @@ h2 {
     justify-content: flex-start;
     letter-spacing: 0.03em;
     color: var(--black);
-    margin-bottom: 7px;
-    margin-left: 20pt;
-    margin-right: 5pt;
+    margin-left: 30pt;
 }
 
 #tarefa {
@@ -103,6 +99,7 @@ h2 {
     background: var(--light-gray);
     border-radius: 75px;
     margin-right: 80pt;
+    margin-bottom: 10px;
 }
 
 #descricao {
@@ -127,13 +124,13 @@ h2#tarefa>img {
 
 #lapis {
     position: relative;
-    right: -45pt;
+    right: -50pt;
     top: 15px;
 }
 
 #lixeiro {
     position: relative;
-    right: -60pt;
+    right: -65pt;
     top: 15px;
 }
 
@@ -415,6 +412,6 @@ input#scheduleDate {
     }
 
     #add-activity-button{
-        margin-left: 40%;
+        margin-left: 38%;
     }
 }
