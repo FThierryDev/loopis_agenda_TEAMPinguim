@@ -122,7 +122,7 @@ confirmEditButton.addEventListener('click', ()=>{
     let modalAlterActivity = document.querySelector('#modal-alterar-atividade');
 
     let alterItemTitle = document.querySelector('#alterItemTitle').innerHTML;
-    let chars = alterItemTitle.split(' ');
+    let chars = alterItemTitle.split('Atividade: ');
     let oldNameActivity = chars[1];
     let date = document.querySelector('.date-alter').value
     scheduleItems.forEach(activity => {

@@ -92,6 +92,7 @@ h2 {
     align-items: center;
     letter-spacing: 0.03em;
     color: var(--black);
+    margin-bottom: 7px;
 }
 
 #tarefa {
