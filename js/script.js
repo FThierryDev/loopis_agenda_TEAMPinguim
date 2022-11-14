@@ -528,6 +528,7 @@ buttonDate.forEach(button => {
                 })
   
                 
+
                 // Abrir o modal para excluir atividade
                 let lixeiro = bloco.querySelector('#lixeiro');
                 lixeiro.addEventListener('click', ()=>{
