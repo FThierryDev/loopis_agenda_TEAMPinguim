@@ -475,6 +475,7 @@ buttonDate.forEach(button => {
                 let h1 = document.createElement('h1');
                 h1.appendChild(document.createTextNode('Ainda não há tarefas para essa data, adicione alguma clicando no botão abaixo!'));
                 h1.setAttribute('id', 'alertNoActivities');
+                h1.style.textAlign = "center";
                 boxTarefas.appendChild(h1);
             
         // Adiciona atividade na lista referente à data
