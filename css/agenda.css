@@ -92,6 +92,7 @@ h2 {
     justify-content: flex-start;
     letter-spacing: 0.03em;
     color: var(--black);
+    margin-bottom: 7px;
     margin-left: 20pt;
     margin-right: 5pt;
 }
